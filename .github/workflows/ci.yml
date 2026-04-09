@@ -1,65 +1,93 @@
-name: Sync Rule-for-OCD
+name: Sync OCD Clash Rule
 
 on:
   schedule:
-    - cron: "0 7 * * *"
+    - cron: "0 7 * * *"   # 每天 UTC 07:00
   workflow_dispatch:
 
 concurrency:
-  group: rule-sync
+  group: rule-clash-sync
   cancel-in-progress: true
+
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   sync:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ Checkout 仓库
+      # 1️⃣ 拉取自己仓库
       - name: Checkout repo
         uses: actions/checkout@v5
-        with:
-          fetch-depth: 0
 
-      # 2️⃣ 设置 Git
+      # 2️⃣ Git 配置
       - name: Setup Git
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      # 3️⃣ 克隆上游
-      - name: Clone upstream
+      # 3️⃣ 获取 upstream 最新 Clash commit
+      - name: Get upstream hash
+        id: upstream
         run: |
-          git clone --depth=1 https://github.com/peiyingyao/Rule-for-OCD upstream
+          HASH=$(git ls-remote https://github.com/peiyingyao/Rule-for-OCD.git refs/heads/master | cut -f1)
+          echo "hash=$HASH" >> $GITHUB_OUTPUT
 
-      # 4️⃣ 同步规则（不会删除你的文件）
-      - name: Sync rules
+      # 4️⃣ 获取本地上次同步 hash
+      - name: Get local hash
+        id: local
         run: |
-          mkdir -p rule
-          cp -r upstream/rule/* rule/
-
-      # 5️⃣ 删除临时仓库
-      - name: Clean
-        run: rm -rf upstream
-
-      # 6️⃣ 检测是否有变化
-      - name: Check changes
-        id: check
-        run: |
-          if [ -n "$(git status --porcelain)" ]; then
-            echo "changed=true" >> $GITHUB_OUTPUT
+          if [ -f .last_sync_clash ]; then
+            echo "hash=$(cat .last_sync_clash)" >> $GITHUB_OUTPUT
           else
-            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "hash=none" >> $GITHUB_OUTPUT
           fi
 
-      # 7️⃣ 提交
-      - name: Commit
-        if: steps.check.outputs.changed == 'true'
+      # 5️⃣ 判断是否需要同步
+      - name: Check if sync needed
+        id: check
         run: |
-          git add rule
-          git commit -m "Auto sync Rule-for-OCD rules"
+          if [ "${{ steps.upstream.outputs.hash }}" != "${{ steps.local.outputs.hash }}" ]; then
+            echo "need_sync=true" >> $GITHUB_OUTPUT
+          else
+            echo "need_sync=false" >> $GITHUB_OUTPUT
+          fi
 
-      # 8️⃣ 推送
-      - name: Push
-        if: steps.check.outputs.changed == 'true'
+      # 6️⃣ 克隆 upstream（仅在需要同步时）
+      - name: Clone upstream
+        if: steps.check.outputs.need_sync == 'true'
+        run: git clone --depth=1 https://github.com/peiyingyao/Rule-for-OCD upstream
+
+      # 7️⃣ 同步 Clash 文件夹（覆盖）
+      - name: Sync Clash rules
+        if: steps.check.outputs.need_sync == 'true'
         run: |
-          git push origin main
+          mkdir -p rule
+          mkdir -p rule/Clash
+          cp -r upstream/rule/Clash/* rule/Clash/
+
+      # 8️⃣ 清理
+      - name: Clean
+        if: steps.check.outputs.need_sync == 'true'
+        run: rm -rf upstream
+
+      # 9️⃣ 保存本次同步 hash
+      - name: Save sync hash
+        if: steps.check.outputs.need_sync == 'true'
+        run: echo "${{ steps.upstream.outputs.hash }}" > .last_sync_clash
+
+      # 🔟 提交 & 推送
+      - name: Commit & Push
+        if: steps.check.outputs.need_sync == 'true'
+        run: |
+          git add rule/Clash .last_sync_clash
+          git commit -m "Sync OCD Clash rule (${{
+            steps.upstream.outputs.hash
+          }})"
+          git push
+
+      # ❌ 没更新提示
+      - name: Skip
+        if: steps.check.outputs.need_sync == 'false'
+        run: echo "✅ Clash 已是最新，无需同步"
