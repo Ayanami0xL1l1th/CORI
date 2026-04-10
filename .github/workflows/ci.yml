@@ -65,7 +65,7 @@ jobs:
         run: |
           mkdir -p rule
           mkdir -p rule/Clash
-          cp -r upstream/rule/Clash/* rule/Clash/
+          cp -r upstream/rule/Clash/* rule/
 
       # 8️⃣ 清理
       - name: Clean
