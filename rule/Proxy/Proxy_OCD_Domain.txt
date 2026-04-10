@@ -160,6 +160,7 @@ voice.telephony.goog
 +.anormalday.com
 +.a5.com.ru
 +.aamacau.com
++.aave.com
 +.abc.com
 +.abc.net.au
 +.abc.pp.ru
@@ -407,6 +408,7 @@ voice.telephony.goog
 +.appsto.re
 +.aptoide.com
 +.arcgis.com
++.archiveit.org
 +.archive.fo
 +.archive.is
 +.archive.li
@@ -420,6 +422,7 @@ voice.telephony.goog
 +.archives.gov
 +.arctosia.com
 +.arecabackup.org
++.arena.ai
 +.arena.taipei
 +.arethusa.su
 +.arlingtoncemetery.mil
@@ -433,6 +436,7 @@ voice.telephony.goog
 +.artsy.net
 +.arunachalforests.gov.in
 +.arvanstorage.ir
++.arweave.org
 +.asacp.org
 +.asdfg.jp
 +.asg.to
@@ -1090,6 +1094,7 @@ voice.telephony.goog
 +.churchinhongkong.org
 +.chushigangdrug.ch
 +.cien.jp
++.cia.gov
 +.cici.com
 +.ciciai.com
 +.cienen.com
@@ -1235,6 +1240,7 @@ voice.telephony.goog
 +.cpumonkey.com
 +.cq99.us
 +.crackle.com
++.crashlytics.com
 +.crazypool.org
 +.crazys.cc
 +.crazyshit.com
@@ -1460,6 +1466,7 @@ voice.telephony.goog
 +.dmm.com
 +.dnsdns.com
 +.dnsstuff.com
++.dns.sb
 +.dns04.com
 +.dns05.com
 +.dns1.us
@@ -1479,6 +1486,7 @@ voice.telephony.goog
 +.doctorvoice.org
 +.documentingreality.com
 +.dogfartnetwork.com
++.doh.sb
 +.dojin.com
 +.dokforum.net
 +.dolc.de
@@ -1496,6 +1504,7 @@ voice.telephony.goog
 +.doosho.com
 +.doourbest.org
 +.dorjeshugden.com
++.dot.sb
 +.dotgov.gov
 +.dotplane.com
 +.dotsub.com
@@ -1511,6 +1520,7 @@ voice.telephony.goog
 +.doujincafe.com
 +.dowei.org
 +.dowjones.com
++.download.dappcdn.com
 +.dphk.org
 +.dpool.top
 +.dpp.org.tw
@@ -3555,6 +3565,7 @@ voice.telephony.goog
 +.missav.com
 +.missav.ws
 +.mist.vip
++.mistral.ai
 +.mit.edu
 +.mitao.com.tw
 +.mitbbs.com
@@ -4012,8 +4023,10 @@ voice.telephony.goog
 +.oizoblog.com
 +.ok.ru
 +.okayfreedom.com
++.okcoin.com
 +.okex.com
 +.okk.tw
++.oklink.com
 +.okpool.me
 +.okx.com
 +.oldcat.net
@@ -4089,6 +4102,7 @@ voice.telephony.goog
 +.orzistic.org
 +.osfoora.com
 +.osha.gov
++.osmand.net
 +.osxdaily.com
 +.otcbtc.com
 +.otnd.org
@@ -4816,6 +4830,7 @@ voice.telephony.goog
 +.shipcamouflage.com
 +.shireyishunjian.com
 +.shitaotv.org
++.shitjournal.org
 +.shixiao.org
 +.shizhao.org
 +.shkspr.mobi
@@ -6208,6 +6223,7 @@ voice.telephony.goog
 +.wireguard.com
 +.wisdompubs.org
 +.wisevid.com
++.wispbyte.com
 +.wistia.com
 +.witnessleeteaching.com
 +.witopia.net
@@ -6302,6 +6318,7 @@ voice.telephony.goog
 +.xclient.info
 +.xcritic.com
 +.xdadevelopers.com
++.xdaforums.com
 +.xeeno.com
 +.xerotica.com
 +.xfiles.to
@@ -6345,12 +6362,14 @@ voice.telephony.goog
 +.xmltrainingguide.com
 +.xmovies.com
 +.xn11xs86f.icu
++.xn1jqvh729avzfcy2d8ummib.com
 +.xn4gq171p.com
 +.xn90wwvt03e.com
 +.xn9iqy04a7fi01l.com
 +.xn9pr62r24a.com
 +.xnczq75pvv1aj5c.org
 +.xni2ru8q2qg.com
++.xnkcrv3utim32hx9f6qe.com
 +.xnngstrlra8j.com
 +.xnnoss43i.com
 +.xnoiq.cc

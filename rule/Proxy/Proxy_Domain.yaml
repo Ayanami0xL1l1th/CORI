@@ -1,13 +1,13 @@
 # NAME: Proxy
 # AUTHOR: blackmatrix7
 # REPO: https://github.com/blackmatrix7/ios_rule_script
-# UPDATED: 2026-03-04 02:17:46
+# UPDATED: 2026-04-10 02:24:07
 # DOMAIN: 9
 # DOMAIN-KEYWORD: 26
-# DOMAIN-SUFFIX: 6576
+# DOMAIN-SUFFIX: 6595
 # IP-CIDR: 93
 # IP-CIDR6: 4
-# TOTAL: 6708
+# TOTAL: 6727
 payload:
   - 'api.waqi.info'
   - 'aqi.aqicn.org'
@@ -171,6 +171,7 @@ payload:
   - '+.a-normal-day.com'
   - '+.a5.com.ru'
   - '+.aamacau.com'
+  - '+.aave.com'
   - '+.abc.com'
   - '+.abc.net.au'
   - '+.abc.pp.ru'
@@ -418,6 +419,7 @@ payload:
   - '+.appsto.re'
   - '+.aptoide.com'
   - '+.arcgis.com'
+  - '+.archive-it.org'
   - '+.archive.fo'
   - '+.archive.is'
   - '+.archive.li'
@@ -431,6 +433,7 @@ payload:
   - '+.archives.gov'
   - '+.arctosia.com'
   - '+.areca-backup.org'
+  - '+.arena.ai'
   - '+.arena.taipei'
   - '+.arethusa.su'
   - '+.arlingtoncemetery.mil'
@@ -444,6 +447,7 @@ payload:
   - '+.artsy.net'
   - '+.arunachalforests.gov.in'
   - '+.arvanstorage.ir'
+  - '+.arweave.org'
   - '+.asacp.org'
   - '+.asdfg.jp'
   - '+.asg.to'
@@ -1101,6 +1105,7 @@ payload:
   - '+.churchinhongkong.org'
   - '+.chushigangdrug.ch'
   - '+.ci-en.jp'
+  - '+.cia.gov'
   - '+.cici.com'
   - '+.ciciai.com'
   - '+.cienen.com'
@@ -1246,6 +1251,7 @@ payload:
   - '+.cpu-monkey.com'
   - '+.cq99.us'
   - '+.crackle.com'
+  - '+.crashlytics.com'
   - '+.crazypool.org'
   - '+.crazys.cc'
   - '+.crazyshit.com'
@@ -1471,6 +1477,7 @@ payload:
   - '+.dmm.com'
   - '+.dns-dns.com'
   - '+.dns-stuff.com'
+  - '+.dns.sb'
   - '+.dns04.com'
   - '+.dns05.com'
   - '+.dns1.us'
@@ -1490,6 +1497,7 @@ payload:
   - '+.doctorvoice.org'
   - '+.documentingreality.com'
   - '+.dogfartnetwork.com'
+  - '+.doh.sb'
   - '+.dojin.com'
   - '+.dok-forum.net'
   - '+.dolc.de'
@@ -1507,6 +1515,7 @@ payload:
   - '+.doosho.com'
   - '+.doourbest.org'
   - '+.dorjeshugden.com'
+  - '+.dot.sb'
   - '+.dotgov.gov'
   - '+.dotplane.com'
   - '+.dotsub.com'
@@ -1522,6 +1531,7 @@ payload:
   - '+.doujincafe.com'
   - '+.dowei.org'
   - '+.dowjones.com'
+  - '+.download.dappcdn.com'
   - '+.dphk.org'
   - '+.dpool.top'
   - '+.dpp.org.tw'
@@ -3566,6 +3576,7 @@ payload:
   - '+.missav.com'
   - '+.missav.ws'
   - '+.mist.vip'
+  - '+.mistral.ai'
   - '+.mit.edu'
   - '+.mitao.com.tw'
   - '+.mitbbs.com'
@@ -4023,8 +4034,10 @@ payload:
   - '+.oizoblog.com'
   - '+.ok.ru'
   - '+.okayfreedom.com'
+  - '+.okcoin.com'
   - '+.okex.com'
   - '+.okk.tw'
+  - '+.oklink.com'
   - '+.okpool.me'
   - '+.okx.com'
   - '+.old-cat.net'
@@ -4100,6 +4113,7 @@ payload:
   - '+.orzistic.org'
   - '+.osfoora.com'
   - '+.osha.gov'
+  - '+.osmand.net'
   - '+.osxdaily.com'
   - '+.otcbtc.com'
   - '+.otnd.org'
@@ -4827,6 +4841,7 @@ payload:
   - '+.shipcamouflage.com'
   - '+.shireyishunjian.com'
   - '+.shitaotv.org'
+  - '+.shitjournal.org'
   - '+.shixiao.org'
   - '+.shizhao.org'
   - '+.shkspr.mobi'
@@ -6219,6 +6234,7 @@ payload:
   - '+.wireguard.com'
   - '+.wisdompubs.org'
   - '+.wisevid.com'
+  - '+.wispbyte.com'
   - '+.wistia.com'
   - '+.witnessleeteaching.com'
   - '+.witopia.net'
@@ -6313,6 +6329,7 @@ payload:
   - '+.xclient.info'
   - '+.xcritic.com'
   - '+.xda-developers.com'
+  - '+.xdaforums.com'
   - '+.xeeno.com'
   - '+.xerotica.com'
   - '+.xfiles.to'
@@ -6356,12 +6373,14 @@ payload:
   - '+.xml-training-guide.com'
   - '+.xmovies.com'
   - '+.xn--11xs86f.icu'
+  - '+.xn--1jqvh729avzfcy2d8ummib.com'
   - '+.xn--4gq171p.com'
   - '+.xn--90wwvt03e.com'
   - '+.xn--9iqy04a7fi01l.com'
   - '+.xn--9pr62r24a.com'
   - '+.xn--czq75pvv1aj5c.org'
   - '+.xn--i2ru8q2qg.com'
+  - '+.xn--kcrv3utim32hx9f6qe.com'
   - '+.xn--ngstr-lra8j.com'
   - '+.xn--noss43i.com'
   - '+.xn--oiq.cc'
