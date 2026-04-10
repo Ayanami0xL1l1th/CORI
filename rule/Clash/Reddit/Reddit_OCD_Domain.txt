@@ -1,8 +1,0 @@
-+.redd.it
-+.reddit.com
-+.redditmail.com
-+.redditmedia.com
-+.redditstatic.com
-+.reddituploads.com
-+.reddituploads.com.cdncf.behance.net
-+.reddituploads.com.cdncf.dropbox.com

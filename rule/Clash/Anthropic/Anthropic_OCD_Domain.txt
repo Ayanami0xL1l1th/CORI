@@ -1,3 +1,0 @@
-servdanthropicwebsite.bcdn.net
-+.anthropic.com
-+.claude.ai

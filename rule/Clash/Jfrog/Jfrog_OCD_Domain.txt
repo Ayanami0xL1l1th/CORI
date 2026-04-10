@@ -1,3 +1,0 @@
-+.bintray.com
-+.jfrog.com
-+.jfrog.org

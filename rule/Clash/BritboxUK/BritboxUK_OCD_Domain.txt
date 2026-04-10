@@ -1,8 +1,0 @@
-itvpnp.live.ott.irdeto.com
-itvpnp.stage.ott.irdeto.com
-+.bbstatic.com
-+.bbc.co.uk
-+.britbox.co.uk
-+.britbox.com
-+.itv.com
-+.massiveitv.com

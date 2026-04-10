@@ -1,6 +1,0 @@
-+.sccdn.net
-+.snapdev.net
-+.snap.com
-+.snapads.com
-+.snapchat.com
-+.snapkit.co

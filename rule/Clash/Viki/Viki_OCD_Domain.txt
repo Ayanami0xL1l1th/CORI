@@ -1,8 +1,0 @@
-+.kalhlspda.akamaihd.net
-+.mcontentviki.s.llnwi.net
-+.twemoji.maxcdn.com
-+.viki.com
-+.viki.io
-+.viki.net
-+.vikidash.akamaized.net
-+.vikiplatform.com

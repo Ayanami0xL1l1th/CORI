@@ -1,7 +1,0 @@
-+.mvk.com
-+.userapi.com
-+.vkcdn.me
-+.vkcdn.net
-+.vkportal.net
-+.vk.cc
-+.vk.com

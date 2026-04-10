@@ -1,5 +1,0 @@
-bcbolt446c5271a.akamaihd.net
-content.jwplatform.com
-edge.api.brightcove.com
-videosf.jwpsrv.com
-+.encoretvb.com

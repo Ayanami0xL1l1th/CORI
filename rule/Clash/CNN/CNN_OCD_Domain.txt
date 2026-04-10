@@ -1,6 +1,0 @@
-+.cnn.com
-+.cnn.io
-+.cnn.it
-+.cnnarabic.com
-+.cnnlabs.com
-+.cnnmoney.ch

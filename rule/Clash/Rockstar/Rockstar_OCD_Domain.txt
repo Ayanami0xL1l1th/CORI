@@ -1,5 +1,0 @@
-+.gamedownloadsrockstargamescom.akamaized.net
-+.mediarockstargamescom.akamaized.net
-+.rockstargames.com
-+.rsg.sc
-+.videosrockstargamescom.akamaized.net
