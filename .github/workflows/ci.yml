@@ -14,7 +14,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # 1️⃣ 拉取自己仓库
+      # 1️⃣ 拉取你自己的仓库
       - name: Checkout repo
         uses: actions/checkout@v5
 
@@ -24,36 +24,37 @@ jobs:
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      # 3️⃣ clone 上游
+      # 3️⃣ clone 上游仓库
       - name: Clone upstream
         run: |
           git clone --depth=1 https://github.com/peiyingyao/Rule-for-OCD.git upstream
 
-      # 4️⃣ 调试（建议保留，避免以后炸）
-      - name: Debug upstream
+      # 4️⃣ 调试
+      - name: Debug upstream structure
         run: |
-          echo "=== upstream rule ==="
+          echo "===== upstream rule ====="
           ls -R upstream/rule || true
 
-          echo "=== clash ==="
+          echo "===== clash ====="
           ls -R upstream/rule/Clash || true
 
-      # 5️⃣ 同步 Clash → rule（核心）
-      - name: Sync Clash to rule
+      # 5️⃣ 同步 Clash → rule
+      - name: Sync Clash rules (safe)
         run: |
           mkdir -p rule
-          rsync -av --delete upstream/rule/Clash/ rule/
+          rsync -av upstream/rule/Clash/ rule/
 
       # 6️⃣ 检查结果
-      - name: Verify
+      - name: Verify result
         run: |
+          echo "===== rule structure ====="
           ls -R rule
 
-      # 7️⃣ 提交 & 推送
+      # 7️⃣ 提交 & 推送（带时间）
       - name: Commit & Push
         run: |
           git add rule
 
-          git commit -m "sync clash rules" || echo "no changes"
+          git commit -m "sync clash rules $(date '+%Y-%m-%d %H:%M:%S')" || echo "no changes"
 
           git push
