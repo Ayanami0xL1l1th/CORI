@@ -1,0 +1,55 @@
+name: Sync Lige Icons
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: lige-icon-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ 拉取你自己的仓库
+      - name: Checkout repo
+        uses: actions/checkout@v5
+
+      # 2️⃣ Git 配置
+      - name: Setup Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # 3️⃣ clone 上游仓库
+      - name: Clone upstream
+        run: |
+          git clone --depth=1 https://github.com/lige47/QuanX-icon-rule.git upstream
+
+      # 4️⃣ 调试目录
+      - name: Debug upstream structure
+        run: |
+          echo "===== upstream icon ====="
+          ls -R upstream/icon || true
+
+      # 5️⃣ 同步 icon → lige
+      - name: Sync icon folder
+        run: |
+          mkdir -p lige
+          rsync -av --delete upstream/icon/ lige/
+
+      # 6️⃣ 检查结果
+      - name: Verify result
+        run: |
+          echo "===== lige structure ====="
+          ls -R lige
+
+      # 7️⃣ 提交 & 推送
+      - name: Commit & Push
+        run: |
+          git add lige
+
+          git commit -m "sync lige icons $(date '+%Y-%m-%d %H:%M:%S')" || echo "no changes"
+
+          git push
