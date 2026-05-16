@@ -1,0 +1,53 @@
+name: Sync Qure IconSet
+
+on:
+  workflow_dispatch:
+
+concurrency:
+  group: qure-icon-sync
+  cancel-in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      # 1️⃣ 拉取你自己的仓库
+      - name: Checkout repo
+        uses: actions/checkout@v5
+
+      # 2️⃣ Git 配置
+      - name: Setup Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # 3️⃣ clone 上游仓库
+      - name: Clone upstream
+        run: |
+          git clone --depth=1 https://github.com/Koolson/Qure.git upstream
+
+      # 4️⃣ 调试目录
+      - name: Debug upstream structure
+        run: |
+          echo "===== upstream IconSet ====="
+          ls -R upstream/IconSet || true
+
+      # 5️⃣ 同步 IconSet → qure
+      - name: Sync IconSet folder
+        run: |
+          mkdir -p qure
+          rsync -av --delete upstream/IconSet/ qure/
+
+      # 6️⃣ 检查结果
+      - name: Verify result
+        run: |
+          echo "===== qure structure ====="
+          ls -R qure
+
+      # 7️⃣ 提交 & 推送
+      - name: Commit & Push
+        run: |
+          git add qure
+          git commit -m "sync qure IconSet $(date '+%Y-%m-%d %H:%M:%S')" || echo "no changes"
+          git push
