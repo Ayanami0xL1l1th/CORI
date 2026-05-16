@@ -55,6 +55,6 @@ jobs:
         run: |
           git add rule
 
-          git commit -m "sync Rule-for-OCD $(date '+%Y-%m-%d %H:%M:%S')" || echo "no changes"
+          git commit -m "sync Rule-for-OCD Clash rule $(date '+%Y-%m-%d %H:%M:%S')" || echo "no changes"
 
           git push
