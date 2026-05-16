@@ -36,7 +36,6 @@ jobs:
       # 5️⃣ 同步 IconSet → qure
       - name: Sync IconSet folder
         run: |
-          rm -rf qure/*
           mkdir -p qure
           rsync -av --delete upstream/IconSet/ qure/
 
@@ -50,5 +49,5 @@ jobs:
       - name: Commit & Push
         run: |
           git add qure
-          git commit -m "sync Qure" --allow-empty
+          git commit -m "sync Qure" || echo "no changes"
           git push
