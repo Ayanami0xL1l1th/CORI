@@ -49,5 +49,5 @@ jobs:
       - name: Commit & Push
         run: |
           git add qure
-          git commit -m "sync qure IconSet " || echo "no changes"
+          git commit -m "sync qure IconSet " || echo "no changes" --allow-empty
           git push
