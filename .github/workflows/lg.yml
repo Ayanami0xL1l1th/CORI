@@ -50,6 +50,6 @@ jobs:
         run: |
           git add lige
 
-          git commit -m "sync QuanX-icon-rule $(date '+%Y-%m-%d %H:%M:%S')" || echo "no changes"
+          git commit -m "sync QuanX-icon-rule https://github.com/lige47/QuanX-icon-rule" || echo "no changes"
 
           git push
