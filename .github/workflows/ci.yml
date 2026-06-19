@@ -1,4 +1,4 @@
-name: Sync Rule-for-OCD Clash rule
+name: Sync OCD Clash rule
 
 on:
   schedule:
