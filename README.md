@@ -11,7 +11,7 @@
 - [ruleset_geodata](https://github.com/DustinWin/ruleset_geodata)
 - [Surfing](https://github.com/GitMetaio/Surfing)
 - [Qure](https://github.com/Koolson/Qure)
-- [QuanX-icon-rule](https://github.com/lige47/QuanX-icon-rule)
+- [lige_icon](https://github.com/lige47/lige_icon)
 - 以及其他未能一一列出的优秀开源项目与作者
 
 正是因为这些作者的持续付出，才使本仓库得以不断完善和发展，在此表示由衷的感谢与敬意。
