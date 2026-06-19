@@ -25,7 +25,7 @@ jobs:
       # 3️⃣ clone 上游仓库
       - name: Clone upstream
         run: |
-          git clone --depth=1 https://github.com/lige47/QuanX-icon-rule.git upstream
+          git clone --depth=1 https://github.com/lige47/lige_icon.git upstream
 
       # 4️⃣ 调试目录
       - name: Debug upstream structure
@@ -50,6 +50,6 @@ jobs:
         run: |
           git add lige
 
-          git commit -m "sync QuanX-icon-rule https://github.com/lige47/QuanX-icon-rule" || echo "no changes"
+          git commit -m "sync lige_icon https://github.com/lige47/lige_icon" || echo "no changes"
 
           git push
