@@ -1,0 +1,52 @@
+name: Sync Surfing icon
+
+on:
+  schedule:
+    - cron: "0 7 * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: surfing-icon-sync
+  cancel_in-progress: true
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v5
+
+      - name: Setup Git
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      # 上游仓库
+      - name: Clone upstream
+        run: |
+          git clone --depth=1 https://github.com/GitMetaio/Surfing.git upstream
+
+      - name: Debug upstream structure
+        run: |
+          echo "===== upstream icon ====="
+          ls -R upstream/app/icon || true
+
+      # 同步 icon → surfing
+      - name: Sync icon folder
+        run: |
+          mkdir -p surfing
+          rsync -av --delete upstream/app/icon/ surfing/
+
+      - name: Verify result
+        run: |
+          echo "===== surfing structure ====="
+          ls -R surfing
+
+      - name: Commit & Push
+        run: |
+          git add surfing
+
+          git commit -m "sync Surfing icon https://github.com/GitMetaio/Surfing" || echo "no changes"
+
+          git push
