@@ -1,8 +1,8 @@
 # 📦 CORI
 
-##Config · Override · Rules · Icons
+## Config · Override · Rules · Icons
 
-##配置 · 覆写 · 规则 · 图标
+## 配置 · 覆写 · 规则 · 图标
 
 本仓库用于收集、整理与同步来自多个优秀开源项目的配置文件、规则集及相关资源。
 
