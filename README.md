@@ -1,6 +1,4 @@
-# 📦 CORI
-
-## Config · Override · Rules · Icons
+# 📦 Config · Override · Rules · Icons
 
 ## 配置 · 覆写 · 规则 · 图标
 
