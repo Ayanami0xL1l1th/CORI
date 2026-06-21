@@ -1,4 +1,4 @@
-# 📦 CORI
+# 📦 Ayanami0's CORI
 
 ## Config · Override · Rules · Icons
 
