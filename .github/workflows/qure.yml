@@ -49,5 +49,5 @@ jobs:
       - name: Commit & Push
         run: |
           git add qure
-          git commit -m "sync Qure https://github.com/Koolson/Qure" || echo "no changes"
+          git commit --allow-empty -m "sync Qure (Koolson/Qure)" || echo "no changes"
           git push
