@@ -45,6 +45,6 @@ jobs:
         run: |
           git add surfing
 
-          git commit -m "sync Surfing icon https://github.com/GitMetaio/Surfing" || echo "no changes"
+          git commit -m "Surfing https://github.com/GitMetaio/Surfing/tree/main/app/icon" || echo "no changes"
 
           git push
