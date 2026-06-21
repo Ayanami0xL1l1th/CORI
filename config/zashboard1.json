@@ -13,7 +13,7 @@
   "config/show-statistics-when-sidebar-collapsed": "true",
   "config/min-proxy-card-width": "130",
   "config/swipe-in-tabs": "false",
-  "config/import-settings-url": "https://github.com/Ayanami0xL1l1th/Ayanami0/blob/main/config/zashboard-settings.json",
+  "config/import-settings-url": "https://raw.githubusercontent.com/Ayanami0xL1l1th/Ayanami0/refs/heads/main/config/zashboard1.json",
   "config/proxy-preview-type": "dots",
   "config/use-smart-group-sort": "false",
   "config/table-width-mode": "manual",
