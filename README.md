@@ -1,4 +1,8 @@
-# 📦 Ayanami0's CORI-Config · Override · Rules · Icons
+# 📦 CORI
+
+Config · Override · Rules · Icons
+
+配置 · 覆写 · 规则 · 图标
 
 本仓库用于收集、整理与同步来自多个优秀开源项目的配置文件、规则集及相关资源，旨在为用户提供更加统一、便捷的使用体验。
 
