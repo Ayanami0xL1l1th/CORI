@@ -50,6 +50,6 @@ jobs:
         run: |
           git add lige
 
-          git commit --allow-empty -m "sync lige_icon (lige47/lige_icon)" || echo "no changes"
+          git commit -m "sync lige_icon https://github.com/lige47/lige_icon" || echo "no changes"
 
           git push
