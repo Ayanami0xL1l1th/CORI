@@ -1,0 +1,206 @@
+###Ayanami0's override_rule###
+lite: &lite
+    type: select
+    include-all: true
+
+proxy-groups:
+  - name: PROXY
+    icon: "https://raw.githubusercontent.com/GitMetaio/Surfing@rm/Home/icon/All.svg"
+    type: select
+    proxies:
+      - HK
+      - SG
+      - JP
+      - TW
+      - US
+      - WD
+      - LowRate
+      - DIRECT
+    include-all: true
+
+  - name: HK
+    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png"
+    filter: "^(?=.*(港|HK|hk|Hong Kong|HongKong|hongkong)).*$"
+    <<: *lite
+
+  - name: SG
+    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png"
+    filter: "^(?=.*(新加坡|坡|狮城|SG|Singapore)).*$"
+    <<: *lite
+
+  - name: JP
+    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png"
+    filter: "^(?=.*(日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan)).*$"
+    <<: *lite
+
+  - name: TW
+    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png"
+    filter: "^(?=.*(台|新北|彰化|TW|Taiwan)).*$"
+    <<: *lite
+
+  - name: US
+    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png"
+    filter: "^(?=.*(美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|UnitedStates)).*$"
+    <<: *lite
+
+  - name: WD
+    icon: "https://raw.githubusercontent.com/GitMetaio/Surfing/refs/heads/rm/Home/icon/Globe.svg"
+    filter: "^(?!.*(港|HK|hk|Hong Kong|HongKong|hongkong|日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|UnitedStates|台|新北|彰化|TW|Taiwan|新加坡|坡|狮城|SG|Singapore|灾|网易|Netease|套餐|重置|剩余|到期|订阅|群|账户|流量|有效期|时间|官网)).*$"
+    <<: *lite
+
+  - name: LowRate
+    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Download.png"
+    filter: (?<![0-9])0\.(?:0[0-9]{1,2}|[1-9])(?![0-9])
+    <<: *lite
+
+  - name: Emby
+    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Emby.png"
+    type: select
+    proxies:
+      - LowRate
+      - HK
+      - SG
+      - JP
+      - TW
+      - US
+      - WD
+
+  - name: Telegram
+    icon: "https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png"
+    type: select
+    proxies:
+      - HK
+      - SG
+      - JP
+      - TW
+      - US
+      - WD
+
+  - name: ADS
+    icon: "https://raw.githubusercontent.com/GitMetaio/Surfing/rm/Home/icon/No-ads-all.svg"
+    type: select
+    proxies:
+      - REJECT
+      - PROXY
+# —————————
+
+rule-anchor:
+  IPCIDR: &IPCIDR
+    {type: http, behavior: ipcidr, format: mrs, interval: 86400}
+  Domain: &Domain
+    {type: http, behavior: domain, format: mrs, interval: 86400}
+
+rule-providers:
+
+
+###国内/私有###
+
+  ChinaMax:
+    <<: *Domain
+    path: ./rules/ChinaMax.mrs
+    url: "https://raw.githubusercontent.com/Ayanami0xL1l1th/Rule-for-OCD/master/rule/Clash/ChinaMax/ChinaMax.mrs"
+  ChinaMax_IP:
+    <<: *IPCIDR
+    path: ./rules/ChinaMax_IP.mrs
+    url: "https://raw.githubusercontent.com/Ayanami0xL1l1th/Rule-for-OCD/master/rule/Clash/ChinaMax/ChinaMax_IP.mrs"
+  Lan:
+    <<: *Domain
+    path: ./rules/Lan.mrs
+    url: "https://raw.githubusercontent.com/Ayanami0xL1l1th/Rule-for-OCD/master/rule/Clash/Lan/Lan.mrs"
+  Lan_IP:
+    <<: *IPCIDR
+    path: ./rules/Lan_IP.mrs
+    url: "https://raw.githubusercontent.com/Ayanami0xL1l1th/Rule-for-OCD/master/rule/Clash/Lan/Lan_IP.mrs"
+
+###直连/代理规则###
+
+  Direct:
+    <<: *Domain
+    path: ./rules/direct.mrs
+    url: "https://raw.githubusercontent.com/Ayanami0xL1l1th/Rule-for-OCD/master/rule/Clash/Direct/Direct_OCD_Domain.mrs"
+  Global:
+    <<: *Domain
+    path: ./rules/Global.mrs
+    url: "https://raw.githubusercontent.com/Ayanami0xL1l1th/Rule-for-OCD/master/rule/Clash/Global/Global.mrs"
+  Global_IP:
+    <<: *IPCIDR
+    path: ./rules/Global_IP.mrs
+    url: "https://raw.githubusercontent.com/Ayanami0xL1l1th/Rule-for-OCD/master/rule/Clash/Global/Global_IP.mrs"
+
+###去广告###
+
+  AWAvenue_Ads_Rule:
+    <<: *YAML
+    path: ./rules/AWAvenue_Ads_Rule_Clash.yaml
+    url: "https://raw.githubusercontent.com/TG-Twilight/AWAvenue-Ads-Rule/main//Filters/AWAvenue-Ads-Rule-Clash.yaml"
+  Anti-AD:
+    <<: *Domain
+    path: ./rules/Anti-AD.mrs
+    url: "https://anti-ad.net/mihomo.mrs"
+
+###游戏###
+
+  Game:
+    <<: *Domain
+    path: ./rules/Game.mrs
+    url: "https://raw.githubusercontent.com/Ayanami0xL1l1th/Rule-for-OCD/master/rule/Clash/Game/Game.mrs"
+  Game_IP:
+    <<: *IPCIDR
+    path: ./rules/Game_IP.mrs
+    url: "https://raw.githubusercontent.com/Ayanami0xL1l1th/Rule-for-OCD/master/rule/Clash/Game/Game_IP.mrs"
+  GameDownload:
+    <<: *Domain
+    path: ./rules/GameDownload.mrs
+    url: "https://raw.githubusercontent.com/Ayanami0xL1l1th/Rule-for-OCD/master/rule/Clash/Game/GameDownload/GameDownload.mrs"
+
+###国外###
+
+  Emby:
+    <<: *Domain
+    path: ./rules/Emby.mrs
+    url: "https://raw.githubusercontent.com/Ayanami0xL1l1th/Rule-for-OCD/master/rule/Clash/Emby/Emby.mrs"
+  Telegram:
+    <<: *Domain
+    path: ./rules/Telegram.mrs
+    url: "https://raw.githubusercontent.com/Ayanami0xL1l1th/Rule-for-OCD/master/rule/Clash/Telegram/Telegram.mrs"
+  Telegram_IP:
+    <<: *IPCIDR
+    path: ./rules/Telegram_IP.mrs
+    url: "https://raw.githubusercontent.com/Ayanami0xL1l1th/Rule-for-OCD/master/rule/Clash/Telegram/Telegram_IP.mrs"
+  GoogleFCM:
+    <<: *Domain
+    path: ./rules/GoogleFCM.mrs
+    url: "https://raw.githubusercontent.com/Ayanami0xL1l1th/Rule-for-OCD/master/rule/Clash/GoogleFCM/GoogleFCM.mrs"
+  GoogleFCM_IP:
+    <<: *IPCIDR
+    path: ./rules/GoogleFCM_IP.mrs
+    url: "https://raw.githubusercontent.com/Ayanami0xL1l1th/Rule-for-OCD/master/rule/Clash/GoogleFCM/GoogleFCM_IP.mrs"
+  Microsoft:
+    <<: *Domain
+    path: ./rules/Microsoft.mrs
+    url: "https://raw.githubusercontent.com/Ayanami0xL1l1th/Rule-for-OCD/master/rule/Clash/Microsoft/Microsoft.mrs"
+
+rules:
+  - RULE-SET,Lan,DIRECT
+  - RULE-SET,Lan_IP,DIRECT,no-resolve
+  - RULE-SET,Direct,DIRECT               #直连规则
+  - RULE-SET,AWAvenue_Ads_Rule,ADS       #去广告
+#  - RULE-SET,Anti-AD,ADS                #拦截更严格，默认用秋风去广告
+  - RULE-SET,Game,DIRECT          #游戏，走直连
+  - RULE-SET,Game_IP,DIRECT
+  - RULE-SET,GameDownload,DIRECT
+  - RULE-SET,GoogleFCM,DIRECT
+  - RULE-SET,GoogleFCM_IP,DIRECT
+  - RULE-SET,Microsoft,DIRECT
+  - DOMAIN-SUFFIX,immersivetranslate.com,DIRECT
+  - RULE-SET,ChinaMax,DIRECT
+  - RULE-SET,ChinaMax_IP,DIRECT
+
+  - RULE-SET,Emby,Emby
+  - RULE-SET,Telegram,PROXY
+  - RULE-SET,Telegram_IP,PROXY,no-resolve
+  - RULE-SET,Global,PROXY
+  - RULE-SET,Global_IP,PROXY
+
+  - MATCH,PROXY
+# —————————
