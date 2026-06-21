@@ -1,8 +1,6 @@
 name: Sync Surfing icon
 
 on:
-  schedule:
-    - cron: "0 7 * * *"
   workflow_dispatch:
 
 concurrency:
