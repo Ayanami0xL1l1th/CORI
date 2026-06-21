@@ -5,7 +5,7 @@ on:
 
 concurrency:
   group: surfing-icon-sync
-  cancel_in-progress: true
+  cancel-in-progress: true
 
 jobs:
   sync:
